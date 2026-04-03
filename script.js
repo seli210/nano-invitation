@@ -87,3 +87,4 @@ document.addEventListener('DOMContentLoaded', () => {
         errorState.classList.add('active');
     }
 });
+
