@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تذكرة الدخول | Online Ticket</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- مكتبة لإنشاء QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <div class="container">
+        
+        <!-- Loading State -->
+        <div id="loading" class="state-container active">
+            <div class="loader"></div>
+            <p>جاري التحقق من التذكرة...</p>
+        </div>
+
+        <!-- Error / Access Denied State -->
+        <div id="error-state" class="state-container hidden">
+            <div class="icon-error">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+            </div>
+            <h1 class="denied-title">Access Denied</h1>
+            <p class="denied-msg">عذراً، هذه التذكرة غير صالحة أو غير موجودة في النظام.</p>
+        </div>
+
+        <!-- Valid Ticket State -->
+        <div id="ticket-state" class="state-container hidden">
+            <div class="ticket-card">
+                
+                <!-- Ticket Header -->
+                <div class="ticket-header">
+                    <div class="brand">
+                        <span class="logo-text">VIP TICKET</span>
+                    </div>
+                    <div class="ticket-number">
+                        <span id="ticket-id-display">#0000</span>
+                    </div>
+                </div>
+                
+                <!-- Separator -->
+                <div class="ticket-divider">
+                    <div class="hole left"></div>
+                    <div class="dashed-line"></div>
+                    <div class="hole right"></div>
+                </div>
+
+                <!-- Ticket Body -->
+                <div class="ticket-body">
+                    <div class="info-group">
+                        <p class="label">الاسم الكامل</p>
+                        <h2 id="attendee-name" class="value text-gradient">-</h2>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-group">
+                            <p class="label">الفريق (Team)</p>
+                            <h3 id="attendee-team" class="value">-</h3>
+                        </div>
+                        <div class="info-group text-left border-right">
+                            <p class="label">حالة التذكرة (Status)</p>
+                            <div class="status-badge" id="attendee-status">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ticket Footer / QR Code -->
+                <div class="ticket-footer">
+                    <div id="qrcode" class="qrcode-container"></div>
+                    <p class="scan-msg">SCAN AT ENTRY</p>
+                </div>
+                
+            </div>
+            <!-- Shiny particle effect -->
+            <div class="sparkles" id="sparkles-container"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
