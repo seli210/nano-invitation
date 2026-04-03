@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تذكرة الدخول | Online Ticket</title>
+    <title>تذكرة NANO TECHNOLOGY CONFERENCE</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,10 +44,18 @@
         <div id="ticket-state" class="state-container hidden">
             <div class="ticket-card">
                 
+                <!-- Watermark -->
+                <div class="watermark">NEW VISION</div>
+                
                 <!-- Ticket Header -->
                 <div class="ticket-header">
                     <div class="brand">
-                        <span class="logo-text">VIP TICKET</span>
+                        <span class="logo-text">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 5px;">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                            NANO TECH<br><span style="font-size: 0.9rem; font-weight: 600; letter-spacing: 2px; color: #94a3b8; display: block; margin-top: 2px;">CONFERENCE</span>
+                        </span>
                     </div>
                     <div class="ticket-number">
                         <span id="ticket-id-display">#0000</span>
@@ -84,6 +92,7 @@
                 <div class="ticket-footer">
                     <div id="qrcode" class="qrcode-container"></div>
                     <p class="scan-msg">SCAN AT ENTRY</p>
+                    <p class="signature">Organized by <strong>NEW VISION</strong></p>
                 </div>
                 
             </div>
